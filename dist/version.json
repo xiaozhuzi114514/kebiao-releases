@@ -1,0 +1,20 @@
+{
+  "version": "2.6.0",
+  "version_code": 20600,
+  "min_supported_version_code": 0,
+  "released_at": "2026-09-19T02:03:28+08:00",
+  "changelog": "# v2.6.0（2026-09-19）\n\n首个走 **GitHub Releases** 的版本（更新源由阿里云镜像切换为 GitHub Releases）。\n\n## 新增\n\n- **APP 自动更新**：启动时静默检查更新；支持强制 / 可选分流、下载进度、失败重试，以及 raw 不通时「手动前往 GitHub」的退路。版本清单走 `raw.githubusercontent.com`，不受 `api.github.com` 未鉴权每小时 60 次限速影响。\n- **下拉刷新数据**：触屏下拉 + 桌面鼠标下拉均可刷新；仅在滚动容器顶部接管手势，不与课表内部滚动抢事件。\n- **设置页「版本更新」卡**：可配置更新源仓库、手动「检查更新」。\n- 接入 `wake/status` 的 `enabled` 字段：服务端禁用唤醒时按钮自动置灰。\n- 课表页重构：顶部「第 N 周 · 周X + 日期」、星期条改单字 + 日期、左侧节次轴显示**起止两行时间**、无课时居中空态；移除商业化元素。\n- 概览页去掉「本周速览」；「数据状态」迁移到设置页。\n\n## 修复\n\n- **下拉刷新在页面顶部掐死原生滚动**（只能往顶部滑、滑不下去）——起手不再立即接管手势，只有真正向下拉才接管。\n- 头部副标题「实时更新」改为显示**上一次数据更新时间**。\n- 课表格子 / 概览页「今日课程」地点统一只显示**房号**（完整地点在详情浮层）。\n- `version.json` 解析兼容两种结构（后端发版脚本实际产出 `assets` + `download_base`，而非指南示例的 `platforms`），避免自动更新静默失效。\n\n## 其他\n\n- 版本基准统一为 **2.6.0 / versionCode 20600**（单一来源 `apps/app/src/version.ts`，与 Release 的 `version.json` 同源）。\n- 代码托管：GitHub 私有仓库 `xiaozhuzi114514/kebiao-clients`；发布物在公开仓库 `xiaozhuzi114514/kebiao-releases`。",
+  "assets": {
+    "kebiao-android-latest.apk": {
+      "size": 10377213,
+      "sha256": "89c94aa59128ee93903eeacdbca6a918dc67959017cd39e8d55dc81b4bf1ebf5",
+      "url": "https://github.com/xiaozhuzi114514/kebiao-releases/releases/download/v2.6.0/kebiao-android-latest.apk"
+    },
+    "kebiao-windows-latest.exe": {
+      "size": 2022523,
+      "sha256": "14776864e007a4ddf467b98f6a0835dcaf41d0a80c071aed423ddb77f23aaf07",
+      "url": "https://github.com/xiaozhuzi114514/kebiao-releases/releases/download/v2.6.0/kebiao-windows-latest.exe"
+    }
+  },
+  "download_base": "https://github.com/xiaozhuzi114514/kebiao-releases/releases/latest/download/"
+}
